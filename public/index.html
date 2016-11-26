@@ -48,64 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
           </a>
-          <!-- Navbar Right Menu -->
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <!-- Messages: style can be found in dropdown.less-->
-              <li class="dropdown messages-menu">
-                <!-- Notifications Menu -->
-                <li class="dropdown notifications-menu">
-                  <!-- Menu toggle button -->
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-bell-o"></i>
-                    <span class="label label-warning">1</span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li class="header">Tienes 1 notificación</li>
-                    <li>
-                      <!-- Inner Menu: contains the notifications -->
-                      <ul class="menu">
-                        <li><!-- start notification -->
-                        <a href="#">
-                          <i class="fa fa-users text-aqua"></i> Bienvenido a SoundMuse
-                        </a>
-                      </li>
-                      <!-- end notification -->
-                    </ul>
-                  </li>
-                  <li class="footer"><a href="#">View all</a></li>
-                </ul>
-              </li>
-              <!-- User Account Menu -->
-              <li class="dropdown user user-menu">
-                <!-- Menu Toggle Button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <!-- The user image in the navbar-->
-                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">Usuario Apellido</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- The user image in the menu -->
-                  <li class="user-header">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                    <p>
-                      Usuario Apellido - Puesto
-                      <small>Miembro desde 26 noviembre</small>
-                    </p>
-                  </li>
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Cerrar Sesión</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+
         </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
@@ -201,27 +144,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Begin Stadistics -->
           <div class="row">
             <div class="col-xs-12 col-md-6">
-              <div class="col-xs-6">
+              <div class="col-xs-12 col-md-6">
                 <!-- small box -->
                 <div class="small-box bg-blue">
                   <div class="inner">
-                    <h3>100</h3>
-                    <p>Agua Promedio Consumida</p>
+                    <h3 class="number" id="consumo_total">100</h3>
+                    <p>Promedio de Agua Consumida</p>
                   </div>
                   <div class="icon">
-                    <i class="ion ion-person-add"></i>
+                    <i class="ion ion-waterdrop"></i>
                   </div>
                   <a href="#" class="small-box-footer">
                     More info <i class="fa fa-arrow-circle-right"></i>
                   </a>
                 </div>
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-12 col-md-6">
                 <!-- small box -->
-                <div class="small-box bg-yellow">
+                <div class="small-box bg-green">
                   <div class="inner">
                     <h3>44</h3>
-                    <p>User Registrations</p>
+                    <p>Tiempo Promedio de Baño</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-person-add"></i>
@@ -232,12 +175,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
               </div>
               
-              <div class="col-xs-6">
+              <div class="col-xs-12 col-md-6">
                 <!-- small box -->
-                <div class="small-box bg-yellow">
+                <div class="small-box bg-aqua">
                   <div class="inner">
                     <h3>44</h3>
-                    <p>User Registrations</p>
+                    <p>Consumo Diario Promedio</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-person-add"></i>
@@ -247,12 +190,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </a>
                 </div>
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-12 col-md-6">
                 <!-- small box -->
-                <div class="small-box bg-yellow">
+                <div class="small-box bg-green">
                   <div class="inner">
-                    <h3>44</h3>
-                    <p>User Registrations</p>
+                    <h3 class="number" id="dif_consumo">44</h3>
+                    <p>Mes Actual vs Mes Pasado</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-person-add"></i>
@@ -266,56 +209,66 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-xs-12 col-md-6">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Striped Full Width Table</h3>
+                  <h3 class="box-title">Tabla de Delegaciones</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
                   <table class="table table-striped">
                     <tbody><tr>
                       <th style="width: 10px">#</th>
-                      <th>Task</th>
-                      <th>Progress</th>
-                      <th style="width: 40px">Label</th>
+                      <th>Delegación</th>
+                      <th>Reducción</th>
+                      <th style="width: 40px">Porcentaje</th>
                     </tr>
                     <tr>
                       <td>1.</td>
-                      <td>Update software</td>
+                      <td>Coyoacán</td>
                       <td>
                         <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                          <div class="progress-bar progress-bar-success" style="width: 55%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-red">55%</span></td>
+                      <td><span id="porcentaje" class="number badge bg-green">55%</span></td>
                     </tr>
                     <tr>
                       <td>2.</td>
-                      <td>Clean database</td>
+                      <td>Alvaro Obregón</td>
                       <td>
                         <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                          <div class="progress-bar progress-bar-red" style="width: 0%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-yellow">70%</span></td>
+                      <td><span class="badge bg-red">0%</span></td>
                     </tr>
                     <tr>
                       <td>3.</td>
-                      <td>Cron job running</td>
+                      <td>Azcapotzalco</td>
                       <td>
                         <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                          <div class="progress-bar progress-bar-red" style="width: 0%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-light-blue">30%</span></td>
+                      <td><span class="badge bg-red">0%</span></td>
                     </tr>
                     <tr>
                       <td>4.</td>
-                      <td>Fix and squish bugs</td>
+                      <td>Benito Juarez</td>
                       <td>
                         <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                          <div class="progress-bar progress-bar-red" style="width: 0%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-green">90%</span></td>
+                      <td><span class="badge bg-red">0%</span></td>
+                    </tr>
+                    <tr>
+                      <td>5.</td>
+                      <td>Cuajimalpa</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar progress-bar-success" style="width: 0%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-red">0%</span></td>
                     </tr>
                   </tbody></table>
                 </div>
@@ -332,9 +285,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
       <!-- /.content-wrapper -->
       <!-- Main Footer -->
-      <footer class="main-footer">
+      <footer class="main-footer text-center">
         <!-- To the right -->
-        <div class="hidden-xs">
+        <div class="">
           Made with <i class="fa fa-heart" aria-hidden="true"></i> by SoundMuse
         </div>
         <!-- Default to the left -->
@@ -349,6 +302,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
     <!-- Bootstrap 3.3.6 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/number.min.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
@@ -362,6 +316,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
     messagingSenderId: "49243383887"
     };
     firebase.initializeApp(config);
+    var database = firebase.database();
+    </script>
+
+    <script>
+    jQuery.ajax({
+            url: "https://regadera-c338c.firebaseio.com/.json",
+            type: "GET",
+
+            contentType: 'application/json; charset=utf-8',
+            success: function(resultData) {
+
+                var total_consumption = resultData.Delegacion.d001.Consumo_actual;
+
+                var con_user_before = resultData.Usuarios.u001.Consumo_historico.m3.Consumo
+
+                var con_user_act = resultData.Usuarios.u001.Consumo_actual 
+
+                var con_del_pasado = resultData.Delegacion.d001.Consumo_historico.m3.Consumo;
+
+                var porcentaje = con_del_pasado*100/total_consumption;
+
+                console.log(porcentaje);
+                $("#consumo_total").html(total_consumption);
+                $("#dif_consumo").html(con_del_pasado - total_consumption);
+                $("#porcentaje").html(porcentaje.toString() + "%");
+                
+                
+
+                $('.number').number(true);
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+            },
+
+            timeout: 120000,
+        });
+
     </script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
