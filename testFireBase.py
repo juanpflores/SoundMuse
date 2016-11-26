@@ -54,15 +54,14 @@ while(True):
 		print("Turn showerhead on")
 		
 		user=firebase.get('/Usuarios',device['EnUsoPor'])
-		print(device['EnUsoPor'])
-		print(user['Consumo_max'])
+		
 		[dTemp,maxWater,casa]=[user['Temperatura_deseada'],user['Consumo_max'],user['Hogar']]
-		print ([dTemp,maxWater])
+		
 		#change temperature to user's needs
 		device['Consumo_max']=maxWater
 		device['Temperatura_deseada']=dTemp
 		firebase.put('/Devices',myDevice,device)
-		time.sleep(10)
+		time.sleep(1)
 		to=time.time()
 		consumedWater=0
 		while(True):
@@ -84,9 +83,10 @@ while(True):
 				firebase.put('/Usuarios',device['EnUsoPor'],user)
 
 			#pedir el flujo
-			try:
-				ser.write("#RF#").encode()
-				m=ser.readline().decode(encoding='UTF-8')
+			try:				
+				ser.write("#RF#".encode())
+				time.sleep(.1)
+				m=ser.readline().decode(encoding='UTF-8')			
 				cons=int(m)*(time.time()-to)/60
 				consumedWater+=cons
 				user['Consumo_actual']=int(m)
@@ -95,7 +95,7 @@ while(True):
 				firebase.put('/Usuarios',device['EnUsoPor'],user)
 			except:
 				print("mmmm")
-				time.sleep(.1)
+				time.sleep(.5)
 
 				
 
