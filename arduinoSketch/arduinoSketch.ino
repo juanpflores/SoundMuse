@@ -7,7 +7,7 @@
 
 Servo myservo;
 int termo=A0;
-int resistencia=4;
+int resistencia=7;
 int water=10;
 int r=3,g=5,b=6;
 
@@ -49,7 +49,7 @@ SIGNAL(TIMER0_COMPA_vect) {
 void setup() {
   Serial.begin(9600);
   pinMode(termo,INPUT);
-  pinMode(resistencia,INPUT);
+  pinMode(resistencia, OUTPUT);
   myservo.attach(9);
   pinMode(flowPin, INPUT);
   digitalWrite(flowPin, HIGH);
@@ -70,9 +70,9 @@ void nextAction(){
   if(s=="RF"){ReadFlow();}
   if(s=="SL"){SetLed();}
   if(s=="ST"){SetTemp();}
-  if(s=="SC"){SetHeater();}
+  if(s=="SC"){digitalWrite(7,HIGH);  Serial.println("Done");}
   if(s=="SW"){SetWater();}
-  
+  if(s=="AA"){digitalWrite(7,LOW);Serial.println("Done");}
 
 }
 void ReadFlow(){
@@ -100,10 +100,7 @@ void SetTemp(){
   Serial.println("Done");
 }
 void SetHeater(){//test with led 
-  if((inputString.substring(2)).toInt()==0){
-    digitalWrite(resistencia,LOW);
-  }
-  else{ digitalWrite(resistencia,HIGH);}
+  digitalWrite(resistencia,HIGH);
   Serial.println("Done");
 }
 void SetWater(){//Check it with the water pump and tip
